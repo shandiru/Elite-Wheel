@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #111111;
+  --surface: #1a1a1a;
+  --surface-2: #232323;
+  --text: #ffffff;
+  --muted: #9ca3af;
+  --gold: #d4a843;
+  --gold-deep: #c9973a;
+  --cta: #e53e3e;
+  --primary: var(--gold);
+  --accent: var(--gold-deep);
+  --highlight: var(--cta);
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  font-family: inherit;
+  background:
+    radial-gradient(circle at top, rgba(212, 168, 67, 0.14), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(229, 62, 62, 0.09), transparent 28%),
+    linear-gradient(180deg, var(--bg) 0%, var(--surface) 100%);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: rgba(229, 62, 62, 0.28);
+  color: #ffffff;
+}
+
+.section-heading {
+  @apply text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-widest text-white;
+}
