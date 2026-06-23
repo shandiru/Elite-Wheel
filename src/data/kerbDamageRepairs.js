@@ -109,7 +109,7 @@ export const kerbDamageRepairsServiceData = {
       {
         label: "Address",
         value: "15 Carmyle Avenue, Glasgow, United Kingdom",
-        href: "https://maps.google.com/?q=15+Carmyle+Avenue,+Glasgow,+United+Kingdom",
+        href: "https://maps.app.goo.gl/QhPQjNmN28A3c5gh8",
       },
     ],
   },
@@ -132,7 +132,7 @@ export const kerbDamageRepairsServiceData = {
       {
         icon: "MapPin",
         title: "15 Carmyle Avenue, Glasgow, United Kingdom",
-        href: "https://maps.google.com/?q=15+Carmyle+Avenue,+Glasgow,+United+Kingdom",
+        href: "https://maps.app.goo.gl/QhPQjNmN28A3c5gh8",
       },
     ],
     packages: [

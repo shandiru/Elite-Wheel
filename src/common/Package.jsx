@@ -9,17 +9,17 @@ const iconMap = {
 };
 
 // ─── WhatsApp Quote Modal ───────────────────────────────────────────────────
-function QuoteModal({ isOpen, onClose, packageName, services }) {
-    const createInitialForm = (serviceName = "") => ({
+function QuoteModal({ isOpen, onClose, packageName, serviceName, services }) {
+    const createInitialForm = () => ({
         name: "",
         phone: "",
-        service: serviceName,
+        service: serviceName || "",
         date: "",
         time: "",
         info: "",
     });
 
-    const [form, setForm] = useState(() => createInitialForm(packageName || ""));
+    const [form, setForm] = useState(createInitialForm);
 
     if (!isOpen) return null;
 
@@ -33,13 +33,14 @@ function QuoteModal({ isOpen, onClose, packageName, services }) {
             `*Full Name:* ${form.name}\n` +
             `*Phone:* ${form.phone}\n` +
             `*Service:* ${form.service}\n` +
+            `*Package:* ${packageName || "Not specified"}\n` +
             `*Preferred Date:* ${form.date}\n` +
             `*Preferred Time:* ${form.time}\n` +
             `*More Info:* ${form.info}`;
 
         const encoded = encodeURIComponent(message);
         window.open(`https://wa.me/447909445101?text=${encoded}`, "_blank");
-        setForm(createInitialForm(packageName || ""));
+        setForm(createInitialForm());
         onClose();
     };
 
@@ -114,11 +115,11 @@ function QuoteModal({ isOpen, onClose, packageName, services }) {
                                 value={form.service}
                                 onChange={handleChange}
                                 className="w-full rounded-lg pl-4 pr-10 py-3 text-sm text-white outline-none transition-all appearance-none cursor-pointer"
-                                style={{ backgroundColor: "#111", border: "1px solid var(--gold)" }}
+                                style={{ backgroundColor: "#111", border: "1px solid var(--gold)", colorScheme: "dark" }}
                             >
-                                <option value="">Select Your Service</option>
+                                <option value="" style={{ backgroundColor: "#111111", color: "#ffffff" }}>Select Your Service</option>
                                 {services?.map((s, i) => (
-                                    <option key={i} value={s}>{s}</option>
+                                    <option key={i} value={s} style={{ backgroundColor: "#111111", color: "#ffffff" }}>{s}</option>
                                 ))}
                             </select>
 
@@ -214,7 +215,7 @@ export default function Package({ data }) {
 
     if (!data) return null;
 
-    const { contactLinks, packages, detail } = data;
+    const { contactLinks, packages, detail, serviceTitle } = data;
     const displayDetail = Array.isArray(detail) ? detail[0] : detail;
 
     const allServices = ["Premium Powder Coating", "Diamond Cut Alloy Wheels", "Full Wheel Refurbishments", "Colour Changes", "Kerb Damage Repairs"];
@@ -252,8 +253,8 @@ export default function Package({ data }) {
                                 <a
                                     key={index}
                                     href={link.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                    target={link.href?.startsWith("http") ? "_blank" : undefined}
+                                    rel={link.href?.startsWith("http") ? "noopener noreferrer" : undefined}
                                     className="group flex items-center gap-4 border border-white/10 rounded-xl p-4 bg-[#111]/70 hover:shadow-md transition-all duration-300"
                                 >
                                     <div className="flex items-center justify-center h-10 w-10 text-[var(--gold)] group-hover:text-[var(--gold)] transition-colors duration-300">
@@ -316,6 +317,7 @@ export default function Package({ data }) {
                 isOpen={modalOpen}
                 onClose={() => setModalOpen(false)}
                 packageName={selectedPackage}
+                serviceName={serviceTitle}
                 services={allServices}
             />
         </>

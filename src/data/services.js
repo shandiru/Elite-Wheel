@@ -37,7 +37,7 @@ const createService = ({
       {
         icon: "MapPin",
         title: "15 Carmyle Avenue, Glasgow, United Kingdom",
-        href: "https://maps.google.com/?q=15+Carmyle+Avenue,+Glasgow,+United+Kingdom",
+        href: "https://maps.app.goo.gl/QhPQjNmN28A3c5gh8",
       },
     ],
     packages: [

@@ -52,7 +52,7 @@ const ServicePage = () => {
     <div className="bg-black">
       <ServiceBanner data={serviceBanner} />
       <ServiceDetail data={serviceDetail} />
-      <Package data={service.packageData} />
+      <Package data={{ ...service.packageData, serviceTitle: service.title }} />
     </div>
   );
 };
