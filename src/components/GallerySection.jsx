@@ -63,6 +63,7 @@ const BeforeAfterSlider = ({ beforeSrc, afterSrc, altText, className = "" }) => 
         src={afterSrc}
         alt={`After - ${altText}`}
         className="w-full h-full object-cover pointer-events-none"
+        loading="lazy"
       />
 
       {/* BEFORE IMAGE */}
@@ -76,6 +77,7 @@ const BeforeAfterSlider = ({ beforeSrc, afterSrc, altText, className = "" }) => 
           src={beforeSrc}
           alt={`Before - ${altText}`}
           className="w-full h-full object-cover pointer-events-none"
+          loading="lazy"
         />
       </div>
 

@@ -97,6 +97,7 @@ export default function Testimonial() {
               src="/review.png"
               alt="review"
               className="h-15 w-auto object-contain mb-3" // Explicit height
+              loading="lazy"
             />
 
             {/* Stars + review count badge */}

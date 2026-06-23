@@ -1,31 +1,24 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function GDPRConsent() {
-  const [visible, setVisible] = useState(false);
-  const [accepted, setAccepted] = useState(null);
-  const [showIcon, setShowIcon] = useState(false);
-
-  useEffect(() => {
+  const [visible, setVisible] = useState(() => {
     const consent = localStorage.getItem("gdprConsent");
-    if (consent === "true" || consent === "false") {
-      setAccepted(consent === "true");
-      setShowIcon(true);
-    } else {
-      setVisible(true);
-    }
-  }, []);
+    return consent !== "true" && consent !== "false";
+  });
+  const [showIcon, setShowIcon] = useState(() => {
+    const consent = localStorage.getItem("gdprConsent");
+    return consent === "true" || consent === "false";
+  });
 
   const handleAccept = () => {
     localStorage.setItem("gdprConsent", "true");
-    setAccepted(true);
     setVisible(false);
     setShowIcon(true);
   };
 
   const handleReject = () => {
     localStorage.setItem("gdprConsent", "false");
-    setAccepted(false);
     setVisible(false);
     setShowIcon(true);
   };
@@ -78,6 +71,7 @@ export default function GDPRConsent() {
               src="/revisit.svg"
               alt="Cookie Icon"
               className="w-5 h-5 object-contain"
+              loading="lazy"
             />
           </button>
         </div>
