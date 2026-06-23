@@ -32,7 +32,7 @@ const ServiceBanner = ({ data }) => {
         </div>
 
         {/* Image Only Section */}
-        <div className="relative overflow-hidden rounded-sm w-full lg:w-[1200px] mx-auto shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/10">
+        <div className="relative overflow-hidden rounded-sm w-full max-w-[1200px] mx-auto shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/10">
           <img
             src={thumbnailImage}
             alt={thumbnailAlt || `${title} vehicle detailing service by Elite Wheels Glasgow`}
