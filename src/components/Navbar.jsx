@@ -110,7 +110,7 @@ const Navbar = () => {
               <img
                 src="/logo.png"
                 alt="Elite Wheels Glasgow Logo"
-                className="h-12 w-auto object-contain"
+                className="h-8 sm:h-12 w-auto object-contain"
               />
             </Link>
 
@@ -203,7 +203,7 @@ const Navbar = () => {
             <img
               src="/logo.png"
               alt="Elite Wheels Glasgow Logo"
-              className="h-12 w-auto object-contain"
+              className="h-8 sm:h-12 w-auto object-contain"
             />
             <button
               onClick={closeMenus}
@@ -223,11 +223,11 @@ const Navbar = () => {
                     key={link.text}
                     className={`rounded-lg overflow-hidden ${isOpen ? `animate-slide-in-${index + 1}` : ""}`}
                   >
-                    <div className="w-full flex items-center justify-between px-4 py-3 text-lg text-white hover:bg-white/10 rounded-lg transition-all duration-200">
+                    <div className="w-full flex items-center justify-between gap-3 px-4 py-3 text-lg text-white hover:bg-white/10 rounded-lg transition-all duration-200">
                       <Link 
                         to="/#services" 
                         onClick={closeMenus} 
-                        className="hover:text-[var(--gold)] font-medium flex-1 text-left"
+                        className="flex-1 text-left font-medium text-white hover:text-[var(--gold)] transition-all duration-200 transform hover:translate-x-2"
                       >
                         {link.text}
                       </Link>
@@ -236,7 +236,7 @@ const Navbar = () => {
                         onClick={() => setServicesOpen((prev) => !prev)}
                         className="text-xs uppercase tracking-[0.2em] text-gray-400 bg-white/5 px-2.5 py-1 rounded-md active:scale-95 transition-transform"
                       >
-                        {servicesOpen ? "Hide" : "Expand"}
+                        {servicesOpen ? "Hide" : "Standard Service"}
                       </button>
                     </div>
                     <div
