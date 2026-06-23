@@ -36,7 +36,7 @@ const ServiceBanner = ({ data }) => {
           <img
             src={thumbnailImage}
             alt={thumbnailAlt || `${title} vehicle detailing service by Elite Wheels Glasgow`}
-            className="w-full h-full rounded-xl object-cover transition-all duration-1000 grayscale-[0.2] hover:grayscale-0 hover:scale-105"
+            className="w-full  h-full 2xl:h-[650px] rounded-xl object-cover transition-all duration-1000 grayscale-[0.2] hover:grayscale-0 hover:scale-105"
             decoding="async"
             loading="lazy"
             fetchPriority="high"
