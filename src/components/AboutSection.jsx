@@ -38,13 +38,16 @@ export default function AboutSection() {
             data-aos="fade-right"
             data-aos-delay="200"
           >
-            {/* IMAGE */}
+            {/* VIDEO */}
             <div className="relative z-10 rounded-lg overflow-hidden shadow-2xl">
-              <img
-                src="/about.jpg"
-                alt="image"
+              <video
+                src="/about%20-video.mp4"
                 className="w-full h-[420px] object-cover"
-                loading="lazy"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
               />
             </div>
 
