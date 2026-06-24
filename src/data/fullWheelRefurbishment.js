@@ -2,16 +2,16 @@ export const fullWheelRefurbishmentServiceData = {
   title: "Full Wheel Refurbishments",
   tag: "Complete Wheel Transformation",
   description:
-    "Our full refurbishment service takes your wheels from damaged and worn back to a flawless, factory-fresh finish, inside and out. Every aspect of the wheel is addressed, from kerb damage and corrosion to the final colour and finish choice. It's the most comprehensive wheel restoration service we offer, and the results speak for themselves.",
+    "Our full refurbishment service takes your wheels from damaged and worn back to a flawless, factory-fresh finish — inside and out. Every aspect of the wheel is addressed, from kerb damage and corrosion to the final colour and finish choice. It's the most comprehensive wheel restoration service we offer, and the results speak for themselves.",
   cost: "Price TBC",
   image: "/g16.jpg",
   tags:
     "wheel refurbishment Glasgow, alloy restoration, full wheel restoration, wheel repair service, refurbished alloys",
   page: {
     introBadge: "Complete Restoration · Factory Standard",
-    introHeading: "Full Wheel Refurbishments",
+    introHeading: "What does a full refurbishment include?",
     introText:
-      "What does a full refurbishment include? A full refurbishment covers everything - structural repair, kerb damage correction, corrosion treatment, and a complete refinish in your chosen style. No damage is left untreated, and the end result is a wheel that looks and performs as if it just left the factory.",
+      "What does a full refurbishment include? A full refurbishment covers everything — structural repair, kerb damage correction, corrosion treatment, and a complete refinish in your chosen style. No damage is left untreated, and the end result is a wheel that looks and performs as if it just left the factory.",
     introNote:
       "Whether you choose powder coating, diamond cutting, or a combination of both, our technicians handle the entire process in-house at Elite Wheels Glasgow. You drop them off damaged; you collect them looking brand new.",
     useCasesTitle: "When you need a full refurbishment",
@@ -60,35 +60,23 @@ export const fullWheelRefurbishmentServiceData = {
     pricingIntro: "Choose the full refurbishment route that best fits the condition of your wheels and the finish you want to achieve.",
     packages: [
       {
-        name: "Standard refurbishment",
-        price: "Price TBC",
+        name: "Cracks & Welds",
+        price: "From £80",
         features: [
-          { description: "Placeholder point 1" },
-          { description: "Placeholder point 2" },
-          { description: "Placeholder point 3" },
-          { description: "Placeholder point 4" },
+          { description: "Crack inspection & assessment" },
+          { description: "Professional welding repair" },
+          { description: "Structural integrity restored" },
+          { description: "Ready for refinish" },
         ],
         btnText: "Enquire Now",
       },
       {
-        name: "Diamond cut refurb",
-        price: "Price TBC",
+        name: "Wheel Nut Removal",
+        price: "£25 per corner",
         features: [
-          { description: "Placeholder point 1" },
-          { description: "Placeholder point 2" },
-          { description: "Placeholder point 3" },
-          { description: "Placeholder point 4" },
-        ],
-        btnText: "Enquire Now",
-      },
-      {
-        name: "Premium full refurb",
-        price: "Price TBC",
-        features: [
-          { description: "Placeholder point 1" },
-          { description: "Placeholder point 2" },
-          { description: "Placeholder point 3" },
-          { description: "Placeholder point 4" },
+          { description: "Seized or damaged nuts removed" },
+          { description: "Safe extraction method" },
+          { description: "No damage to wheel or hub" },
         ],
         btnText: "Enquire Now",
       },
@@ -137,39 +125,26 @@ export const fullWheelRefurbishmentServiceData = {
     ],
     packages: [
       {
-        type: "Standard refurbishment",
-        price: "Price TBC",
+        type: "Cracks & Welds",
+        price: "From £80",
         features: [
-          { description: "Placeholder point 1" },
-          { description: "Placeholder point 2" },
-          { description: "Placeholder point 3" },
-          { description: "Placeholder point 4" },
+          { description: "Crack inspection & assessment" },
+          { description: "Professional welding repair" },
+          { description: "Structural integrity restored" },
+          { description: "Ready for refinish" },
         ],
         btnText: "Enquire Now",
       },
       {
-        type: "Diamond cut refurb",
-        price: "Price TBC",
+        type: "Wheel Nut Removal",
+        price: "£25 per corner",
         features: [
-          { description: "Placeholder point 1" },
-          { description: "Placeholder point 2" },
-          { description: "Placeholder point 3" },
-          { description: "Placeholder point 4" },
-        ],
-        btnText: "Enquire Now",
-      },
-      {
-        type: "Premium full refurb",
-        price: "Price TBC",
-        features: [
-          { description: "Placeholder point 1" },
-          { description: "Placeholder point 2" },
-          { description: "Placeholder point 3" },
-          { description: "Placeholder point 4" },
+          { description: "Seized or damaged nuts removed" },
+          { description: "Safe extraction method" },
+          { description: "No damage to wheel or hub" },
         ],
         btnText: "Enquire Now",
       },
     ],
   },
 };
-

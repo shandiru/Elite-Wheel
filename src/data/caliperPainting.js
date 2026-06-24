@@ -9,7 +9,7 @@ export const caliperPaintingServiceData = {
     "Caliper painting Glasgow, Brake caliper paint, Painted calipers Glasgow, Red caliper paint, Custom caliper colour Glasgow",
   page: {
     introBadge: "Heat-Resistant - Long-Lasting",
-    introHeading: "Caliper Painting",
+    introHeading: "What is caliper painting?",
     introText:
       "What is caliper painting? Caliper painting involves cleaning, prepping, and coating your brake calipers with a specialist high-temperature paint designed to withstand the intense heat generated during braking. Unlike standard paint, caliper paint bonds directly to the metal and resists chipping, fading, and corrosion even under demanding conditions.",
     introNote:
