@@ -14,10 +14,18 @@ const cardData = [
   { beforeImageUrl: "/g15.jpg", afterImageUrl: "/g16.jpg", altText: "Classic car restoration set 8" },
   { beforeImageUrl: "/g18.jpg", afterImageUrl: "/g17.jpg", altText: "Classic car restoration set 9" },
   { beforeImageUrl: "/g19.jpg", afterImageUrl: "/g20.jpg", altText: "Classic car restoration set 10" },
+  { beforeImageUrl: "/before-8.jpeg", afterImageUrl: "/after-8.jpeg", altText: "Classic car restoration set 11" },
+  { beforeImageUrl: "/before-9.jpeg", afterImageUrl: "/after-9.jpeg", altText: "Classic car restoration set 12" },
 ];
 
 // ---------------- BEFORE AFTER SLIDER ----------------
-const BeforeAfterSlider = ({ beforeSrc, afterSrc, altText, className = "" }) => {
+const BeforeAfterSlider = ({
+  beforeSrc,
+  afterSrc,
+  altText,
+  className = "",
+  imageClassName = "object-cover",
+}) => {
   const [position, setPosition] = useState(50);
   const containerRef = useRef(null);
   const dragging = useRef(false);
@@ -51,7 +59,7 @@ const BeforeAfterSlider = ({ beforeSrc, afterSrc, altText, className = "" }) => 
   return (
     <div
       ref={containerRef}
-      className={`relative overflow-hidden select-none ${className}`}
+      className={`relative overflow-hidden select-none bg-black ${className}`}
       onMouseMove={onMove}
       onMouseUp={stopDrag}
       onMouseLeave={stopDrag}
@@ -59,12 +67,14 @@ const BeforeAfterSlider = ({ beforeSrc, afterSrc, altText, className = "" }) => 
       onTouchEnd={stopDrag}
     >
       {/* AFTER IMAGE */}
-      <img
-        src={afterSrc}
-        alt={`After - ${altText}`}
-        className="w-full h-full object-cover pointer-events-none"
-        loading="lazy"
-      />
+      <div className="absolute inset-0">
+        <img
+          src={afterSrc}
+          alt={`After - ${altText}`}
+          className={`w-full h-full pointer-events-none ${imageClassName}`}
+          loading="lazy"
+        />
+      </div>
 
       {/* BEFORE IMAGE */}
       <div
@@ -76,7 +86,7 @@ const BeforeAfterSlider = ({ beforeSrc, afterSrc, altText, className = "" }) => 
         <img
           src={beforeSrc}
           alt={`Before - ${altText}`}
-          className="w-full h-full object-cover pointer-events-none"
+          className={`w-full h-full pointer-events-none ${imageClassName}`}
           loading="lazy"
         />
       </div>
@@ -200,6 +210,7 @@ const WorkGallery = () => {
                       afterSrc={card.afterImageUrl}
                       altText={card.altText}
                       className="aspect-[4/3]"
+                      imageClassName="object-contain"
                     />
 
                     <div className="p-4 flex justify-between items-center">
@@ -274,7 +285,8 @@ const WorkGallery = () => {
                   beforeSrc={selectedCard.beforeImageUrl}
                   afterSrc={selectedCard.afterImageUrl}
                   altText={selectedCard.altText}
-                  className="aspect-video"
+                  className="h-[75vh] min-h-[320px] w-full"
+                  imageClassName="object-contain"
                 />
               </div>
 
