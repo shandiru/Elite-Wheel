@@ -5,12 +5,12 @@ import { FaArrowsLeftRight } from "react-icons/fa6";
 
 const cardData = [
   { beforeImageUrl: "/g1.jpg", afterImageUrl: "/g2.jpg", altText: "Classic car restoration set 1" },
-  { beforeImageUrl: "/g3.jpg", afterImageUrl: "/g4.jpg", altText: "Classic car restoration set 2" },
+ 
   { beforeImageUrl: "/g5.jpg", afterImageUrl: "/g6.jpg", altText: "Classic car restoration set 3" },
-  { beforeImageUrl: "/g7.jpg", afterImageUrl: "/g8.jpg", altText: "Classic car restoration set 4" },
+ 
   { beforeImageUrl: "/g9.jpg", afterImageUrl: "/g10.jpg", altText: "Classic car restoration set 5" },
-  { beforeImageUrl: "/g11.jpg", afterImageUrl: "/g12.jpg", altText: "Classic car restoration set 6" },
-  { beforeImageUrl: "/g13.jpg", afterImageUrl: "/g14.jpg", altText: "Classic car restoration set 7" },
+  { beforeImageUrl: "/g12.jpg", afterImageUrl: "/g11.jpg", altText: "Classic car restoration set 6" },
+ 
   { beforeImageUrl: "/g15.jpg", afterImageUrl: "/g16.jpg", altText: "Classic car restoration set 8" },
   { beforeImageUrl: "/g18.jpg", afterImageUrl: "/g17.jpg", altText: "Classic car restoration set 9" },
   { beforeImageUrl: "/g19.jpg", afterImageUrl: "/g20.jpg", altText: "Classic car restoration set 10" },
