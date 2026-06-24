@@ -1,3 +1,4 @@
+import { caliperPaintingServiceData } from "./caliperPainting";
 import { colourChangesServiceData } from "./colourChanges";
 import { diamondCuttingServiceData } from "./diamondCutting";
 import { fullWheelRefurbishmentServiceData } from "./fullWheelRefurbishment";
@@ -189,6 +190,11 @@ export const services = [
     number: "05",
     slug: "kerb-damage-repairs",
     ...kerbDamageRepairsServiceData,
+  }),
+  createService({
+    number: "06",
+    slug: "caliper-painting",
+    ...caliperPaintingServiceData,
   }),
 ];
 

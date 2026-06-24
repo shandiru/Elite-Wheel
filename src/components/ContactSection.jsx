@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { services } from "../data/services";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -13,13 +14,7 @@ export default function ContactSection() {
 
   const whatsappNumber = "447909445101";
 
-  const services = [
-    "Premium Powder Coating",
-    "Diamond Cut Alloy Wheels",
-    "Full Wheel Refurbishments",
-    "Colour Changes",
-    "Kerb Damage Repairs",
-  ];
+  const serviceOptions = services.map((service) => service.title);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -162,7 +157,7 @@ Message: ${formData.message}
                     className="w-full px-4 py-3 rounded-lg border border-white/10 bg-black text-white focus:ring-2 focus:ring-[var(--cta)] outline-none transition"
                   >
                     <option value="">Choose a service</option>
-                    {services.map((service) => (
+                    {serviceOptions.map((service) => (
                       <option key={service} value={service}>
                         {service}
                       </option>

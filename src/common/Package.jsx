@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FiPhone, FiMail, FiMapPin, FiCheck, FiX } from "react-icons/fi";
 import { SiWhatsapp } from "react-icons/si";
+import { services as serviceCatalog } from "../data/services";
 
 const iconMap = {
     Phone: <FiPhone size={20} />,
@@ -218,7 +219,7 @@ export default function Package({ data }) {
     const { contactLinks, packages, detail, serviceTitle } = data;
     const displayDetail = Array.isArray(detail) ? detail[0] : detail;
 
-    const allServices = ["Premium Powder Coating", "Diamond Cut Alloy Wheels", "Full Wheel Refurbishments", "Colour Changes", "Kerb Damage Repairs"];
+    const allServices = serviceCatalog.map((service) => service.title);
 
     const openModal = (pkgType) => {
         setSelectedPackage(pkgType);
