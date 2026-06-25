@@ -1,10 +1,37 @@
+import { useEffect, useState } from "react";
+
 const ServiceBanner = ({ data }) => {
   // Brand color constant
   const brandColor = "var(--gold)";
 
   if (!data) return null;
 
-  const { tag, title, description, thumbnailImage, thumbnailAlt } = data;
+  const { tag, title, description, thumbnailImage, thumbnailAlt, mediaSlides = [] } = data;
+  const slides =
+    mediaSlides.length > 0
+      ? mediaSlides
+      : [
+          {
+            type: "image",
+            src: thumbnailImage,
+            alt: thumbnailAlt || `${title} vehicle detailing service by Elite Wheels Glasgow`,
+          },
+        ];
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    setActiveSlide(0);
+  }, [slides.length, title]);
+
+  useEffect(() => {
+    if (slides.length <= 1) return undefined;
+
+    const interval = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % slides.length);
+    }, 4500);
+
+    return () => window.clearInterval(interval);
+  }, [slides.length]);
 
   return (
     /* Background flips between White and Black */
@@ -33,17 +60,55 @@ const ServiceBanner = ({ data }) => {
 
         {/* Image Only Section */}
         <div className="relative overflow-hidden rounded-sm w-full max-w-[1200px] mx-auto shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/10">
-          <img
-            src={thumbnailImage}
-            alt={thumbnailAlt || `${title} vehicle detailing service by Elite Wheels Glasgow`}
-            className="w-full  h-full 2xl:h-[650px] rounded-xl object-cover transition-all duration-1000 grayscale-[0.2] hover:grayscale-0 hover:scale-105"
-            decoding="async"
-            loading="lazy"
-            fetchPriority="high"
-          />
+          <div
+            className="flex transition-transform duration-700 ease-out"
+            style={{ transform: `translateX(-${activeSlide * 100}%)` }}
+          >
+            {slides.map((slide, index) => (
+              <div key={`${slide.src}-${index}`} className="w-full shrink-0">
+                {slide.type === "video" ? (
+                  <video
+                    className="w-full h-full 2xl:h-[650px] rounded-xl object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                  >
+                    <source src={slide.src} type="video/mp4" />
+                  </video>
+                ) : (
+                  <img
+                    src={slide.src}
+                    alt={slide.alt || thumbnailAlt || `${title} vehicle detailing service by Elite Wheels Glasgow`}
+                    className="w-full h-full 2xl:h-[650px] rounded-xl object-cover transition-all duration-1000 grayscale-[0.2] hover:grayscale-0 hover:scale-105"
+                    decoding="async"
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "auto"}
+                  />
+                )}
+              </div>
+            ))}
+          </div>
 
           {/* Subtle Gradient Overlay for Depth */}
           <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-80" />
+
+          {slides.length > 1 && (
+            <div className="absolute bottom-8 right-8 flex items-center gap-3 z-10">
+              {slides.map((slide, index) => (
+                <button
+                  key={`${slide.src}-indicator-${index}`}
+                  type="button"
+                  onClick={() => setActiveSlide(index)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    activeSlide === index ? "w-10 bg-[var(--gold)]" : "w-2 bg-white/45"
+                  }`}
+                  aria-label={`Show ${slide.type} slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          )}
 
           {/* Bottom Label */}
           <div className="absolute bottom-8 left-8 flex items-center gap-4">

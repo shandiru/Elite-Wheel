@@ -16,7 +16,7 @@ const ServicePage = () => {
     return <Navigate to={`/service/${defaultServiceSlug}`} replace />;
   }
 
-  const serviceBanner = service.banner || {
+  const defaultBanner = {
     tag: service.tag,
     introBadge: service.page?.introBadge,
     title: service.title,
@@ -26,6 +26,23 @@ const ServicePage = () => {
     thumbnailImage: service.image || service.media,
     thumbnailAlt: `${service.title} service at Elite Wheels Glasgow`,
   };
+  const serviceBanner = { ...(service.banner || defaultBanner) };
+
+  if (slug === "diamond-cutting") {
+    serviceBanner.mediaSlides = [
+      {
+        type: "video",
+        src: "/Diamond-cut-video.mp4",
+      },
+      {
+        type: "image",
+        src: "/Diamond-cut-image.jpeg",
+        alt: "Diamond cut alloy wheel service at Elite Wheels Glasgow",
+      },
+    ];
+    serviceBanner.thumbnailImage = "/Diamond-cut-image.jpeg";
+    serviceBanner.thumbnailAlt = "Diamond cut alloy wheel service at Elite Wheels Glasgow";
+  }
 
   const serviceDetail = service.detail || {
     introBadge: service.page?.introBadge,
