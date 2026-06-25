@@ -57,7 +57,7 @@ export const fullWheelRefurbishmentServiceData = {
       },
     ],
     pricingTitle: "Full refurbishment packages",
-    pricingIntro: "Choose the full refurbishment route that best fits the condition of your wheels and the finish you want to achieve.",
+    pricingIntro: "Choose the full refurbishment route that best fits the condition of your wheels and the finish you want to achieve, including add-on services like kerb damage repairs and caliper painting.",
     packages: [
       {
         name: "Cracks & Welds",
@@ -77,6 +77,26 @@ export const fullWheelRefurbishmentServiceData = {
           { description: "Seized or damaged nuts removed" },
           { description: "Safe extraction method" },
           { description: "No damage to wheel or hub" },
+        ],
+        btnText: "Enquire Now",
+      },
+      {
+        name: "Kerb Damage Repairs",
+        price: "Price TBC",
+        features: [
+          { description: "Ideal for scuffed rims, scrapes, and deeper kerb marks." },
+          { description: "Damaged areas are rebuilt, reshaped, and prepared for refinish." },
+          { description: "Best added when your refurbishment needs cosmetic repair work first." },
+        ],
+        btnText: "Enquire Now",
+      },
+      {
+        name: "Caliper Painting",
+        price: "From £30 per corner",
+        features: [
+          { description: "High-temperature paint designed for long-lasting colour and protection." },
+          { description: "Perfect for pairing with freshly refurbished alloys." },
+          { description: "Available as a styling add-on within your refurbishment booking." },
         ],
         btnText: "Enquire Now",
       },
@@ -104,7 +124,7 @@ export const fullWheelRefurbishmentServiceData = {
   packageData: {
     detail: {
       title: "Pricing",
-      desc: "Full refurbishment packages",
+      desc: "Full refurbishment packages and add-on services",
     },
     contactLinks: [
       {
@@ -142,6 +162,26 @@ export const fullWheelRefurbishmentServiceData = {
           { description: "Seized or damaged nuts removed" },
           { description: "Safe extraction method" },
           { description: "No damage to wheel or hub" },
+        ],
+        btnText: "Enquire Now",
+      },
+      {
+        type: "Kerb Damage Repairs",
+        price: "Price TBC",
+        features: [
+          { description: "Ideal for scuffed rims, scrapes, and deeper kerb marks." },
+          { description: "Damaged areas are rebuilt, reshaped, and prepared for refinish." },
+          { description: "Best added when your refurbishment needs cosmetic repair work first." },
+        ],
+        btnText: "Enquire Now",
+      },
+      {
+        type: "Caliper Painting",
+        price: "From £30 per corner",
+        features: [
+          { description: "High-temperature paint designed for long-lasting colour and protection." },
+          { description: "Perfect for pairing with freshly refurbished alloys." },
+          { description: "Available as a styling add-on within your refurbishment booking." },
         ],
         btnText: "Enquire Now",
       },

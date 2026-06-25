@@ -271,14 +271,17 @@ export default function Package({ data }) {
 
                     {/* RIGHT COLUMN */}
                     <div className="flex flex-col gap-10 mt-10 lg:mt-0">
-                        {packages?.map((pkg, idx) => (
+                        {packages?.map((pkg, idx) => {
+                            const packageLabel = pkg.type || pkg.name;
+
+                            return (
                             <div
                                 key={idx}
                                 className="border border-white/10 rounded-2xl p-6 sm:p-8 transition-all duration-500
                                 bg-[#151515] hover:border-[var(--gold)]/40 shadow-sm hover:shadow-xl"
                             >
                                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
-                                    {pkg.type}
+                                    {packageLabel}
                                 </h3>
                                 <div className="rounded-lg p-5 mb-6 bg-[#0b0b0b]">
                                     <p className="text-4xl sm:text-5xl font-bold text-[var(--gold)]">{pkg.price}</p>
@@ -301,14 +304,15 @@ export default function Package({ data }) {
                                 </div>
 
                                 <button
-                                    onClick={() => openModal(pkg.type)}
+                                    onClick={() => openModal(packageLabel)}
                                     className="w-full block text-sm md:text-base text-white font-bold py-4 rounded-full transition-all text-center hover:opacity-90 active:scale-95"
                                     style={{ backgroundColor: "var(--cta)" }}
                                 >
                                     {pkg.btnText}
                                 </button>
                             </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
             </section>

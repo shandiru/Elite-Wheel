@@ -2,15 +2,11 @@ import { Navigate, useParams } from "react-router-dom";
 import Package from "../common/Package";
 import ServiceBanner from "../common/ServiceBanner";
 import ServiceDetail from "../common/ServiceDetail";
-import { kerbDamageRepairsServiceData } from "../data/kerbDamageRepairs";
 import { defaultServiceSlug, getServiceBySlug } from "../data/services";
 
 const ServicePage = () => {
   const { slug } = useParams();
-  const service =
-    slug === "kerb-damage-repairs"
-      ? kerbDamageRepairsServiceData
-      : getServiceBySlug(slug);
+  const service = getServiceBySlug(slug);
 
   if (!service) {
     return <Navigate to={`/service/${defaultServiceSlug}`} replace />;

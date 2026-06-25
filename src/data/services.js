@@ -1,8 +1,6 @@
-import { caliperPaintingServiceData } from "./caliperPainting";
 import { colourChangesServiceData } from "./colourChanges";
 import { diamondCuttingServiceData } from "./diamondCutting";
 import { fullWheelRefurbishmentServiceData } from "./fullWheelRefurbishment";
-import { kerbDamageRepairsServiceData } from "./kerbDamageRepairs";
 import { powderCoatingServiceData } from "./powderCoating";
 
 const createService = ({
@@ -185,16 +183,6 @@ export const services = [
     number: "04",
     slug: "colour-changes",
     ...colourChangesServiceData,
-  }),
-  createService({
-    number: "05",
-    slug: "kerb-damage-repairs",
-    ...kerbDamageRepairsServiceData,
-  }),
-  createService({
-    number: "06",
-    slug: "caliper-painting",
-    ...caliperPaintingServiceData,
   }),
 ];
 
