@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import { useSwipeable } from "react-swipeable";
 
 const testimonials = [
@@ -23,7 +22,24 @@ const testimonials = [
   {
     name: "Sample User 5",
     review: "Sample Review: Excellent customer service. Fair prices, honest advice, and very friendly staff throughout.",
-  }
+  },
+   {
+    name: "Sample User 6",
+    review: "Sample Review: Excellent customer service. Fair prices, honest advice, and very friendly staff throughout.",
+  },
+   {
+    name: "Sample User 7",
+    review: "Sample Review: Excellent customer service. Fair prices, honest advice, and very friendly staff throughout.",
+  },
+   {
+    name: "Sample User 8",
+    review: "Sample Review: Excellent customer service. Fair prices, honest advice, and very friendly staff throughout.",
+  },
+   {
+    name: "Sample User 9",
+    review: "Sample Review: Excellent customer service. Fair prices, honest advice, and very friendly staff throughout.",
+  },
+  
 ];
 
 const chunkArray = (arr, size) => {
@@ -37,14 +53,6 @@ const chunkArray = (arr, size) => {
 export default function Testimonial() {
   const [current, setCurrent] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-
-  const showPrevSlide = () => {
-    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
-  const showNextSlide = () => {
-    setCurrent((prev) => (prev + 1) % slides.length);
-  };
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -63,8 +71,8 @@ export default function Testimonial() {
   }, [slides.length]);
 
   const handlers = useSwipeable({
-    onSwipedLeft: showNextSlide,
-    onSwipedRight: showPrevSlide,
+    onSwipedLeft: () => setCurrent((prev) => (prev + 1) % slides.length),
+    onSwipedRight: () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length),
     trackMouse: true,
   });
 
@@ -141,28 +149,6 @@ export default function Testimonial() {
               </div>
             ))}
           </div>
-
-          {slides.length > 1 && (
-            <>
-              <button
-                type="button"
-                onClick={showPrevSlide}
-                className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full border border-white/10 bg-black/65 p-3 text-white transition hover:bg-black/85 sm:left-2"
-                aria-label="Show previous testimonial slide"
-              >
-                <FaChevronLeft className="text-sm" />
-              </button>
-
-              <button
-                type="button"
-                onClick={showNextSlide}
-                className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full border border-white/10 bg-black/65 p-3 text-white transition hover:bg-black/85 sm:right-2"
-                aria-label="Show next testimonial slide"
-              >
-                <FaChevronRight className="text-sm" />
-              </button>
-            </>
-          )}
 
           {/* Progress Indicators */}
           <div className="flex justify-center mt-12 gap-3">
