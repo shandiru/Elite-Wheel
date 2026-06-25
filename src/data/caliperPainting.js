@@ -4,7 +4,7 @@ export const caliperPaintingServiceData = {
   description:
     "Add a striking finishing touch to your vehicle with professionally painted brake calipers from Elite Wheels Glasgow. Visible through your alloys, painted calipers are one of the most impactful and affordable upgrades you can make to your car's appearance. We use high-temperature caliper paint that handles the extreme heat of braking without fading, peeling, or cracking.",
   cost: "From \u00A330 per corner",
-  image: "/g17.jpg",
+  image: "/Caliper-painting.webp",
   tags:
     "Caliper painting Glasgow, Brake caliper paint, Painted calipers Glasgow, Red caliper paint, Custom caliper colour Glasgow",
   page: {

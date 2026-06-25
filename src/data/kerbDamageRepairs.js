@@ -3,7 +3,7 @@ export const kerbDamageRepairsServiceData = {
   tag: "Alloy Wheel Repair Specialists",
   description:
     "Kerb damage is one of the most common and most visible forms of alloy wheel wear, and it doesn't have to be permanent. Our technicians expertly reshape, fill, and refinish kerbed alloys to restore them to a factory-fresh condition. From light scuffs to deep gouges, we have the skills and equipment to fix it properly.",
-  image: "/g8.jpg",
+  image: "/Kerb-damage-repair.webp",
   tags:
     "kerb damage repair Glasgow, alloy scratch repair, rim scuff repair, wheel touch-up service, curb rash fix",
   page: {

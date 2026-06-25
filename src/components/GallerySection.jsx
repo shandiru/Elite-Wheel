@@ -6,6 +6,7 @@ import { FaArrowsLeftRight } from "react-icons/fa6";
 const cardData = [
   
   { beforeImageUrl: "/g12.jpg", afterImageUrl: "/g11.jpg", altText: "Classic car restoration set 6" },
+   { beforeImageUrl: "/Refurb-before.jpeg", afterImageUrl: "/Refurb-after.jpeg", altText: "Classic car restoration set 7" },
  
   { beforeImageUrl: "/g15.jpg", afterImageUrl: "/g16.jpg", altText: "Classic car restoration set 8" },
   { beforeImageUrl: "/g18.jpg", afterImageUrl: "/g17.jpg", altText: "Classic car restoration set 9" },
