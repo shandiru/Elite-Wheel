@@ -4,50 +4,25 @@ import { useSwipeable } from "react-swipeable";
 
 const testimonials = [
   {
-    name: "Mr Johnson",
-    review:
-      "Charlie is a wizard at what he does, advice is so spot on.You walk into the showroom and its like being a kid in candy shop, vast selection of alloys to choose from. I have a Transporter T6.1 was a bit crash bang on my old tyres, Charlie advised to change to a larger wall thickness…So went for a 235/55/18 General Grabber Cross, WOW what a difference. So pleased with the result…. Cheers Charlie..Nigel",
+    name: "Sample User 1",
+    review: "Sample Review: Great service! Quick wheel alignment and completely transparent pricing. Highly recommended!",
   },
   {
-    name: "Maria Mitchell",
-    review:
-      "Just like to say all garages I have been to this wins by far . They are so helpful & polite & do not rip you off they are fair prices & they bend over backwards to help keep cost down with still getting job done amazing company and as woman it nice to go where you don’t feel intimated lovely all rounder this place & lovely meeting owner beautiful lady & her son Chris was most helpful ! Thanku for doing my car & my son 😎",
+    name: "Sample User 2",
+    review: "Sample Review: Amazing experience. Fixed my flat tyre and checked everything in no time. Very professional team.",
   },
   {
-    name: "Ann-Marie Sargent",
-    review:
-      "Excellent customer service, went out of their way to make the whole experience truly amazing! Refubed wheels look brilliant and so do the alloys they found for us. Highly recommend them total professionals know there stuff and they are totally human as well. Especially Charlie and Jay can’t praise them enough.",
+    name: "Sample User 3",
+    review: "Sample Review: Highly professional garage. Did a flawless job on alloy refurbishment. The wheels look brand new.",
   },
   {
-    name: "David Broadhead",
-    review:
-      "Last year, Elite carried out 4-wheel alignment on both our family cars. Took the BMW back for a recheck after 9 months, and they were happy to put it on the ramp, and advised all was in good shape. Such peace of mind only comes with great customer service. Well done Elite.",
+    name: "Sample User 4",
+    review: "Sample Review: Super quick and reliable service. Squeezed me into their busy schedule and sorted the issue perfectly.",
   },
   {
-    name: "C and J",
-    review:
-      "Fitted some lowering springs to my Kuga and needed a company that could sort out my alignment, someone who knows what they are doing! Took a chance with elitewheels as I hadn't booked in advance, even though they were fully booked up they squeezed me in straight away as I had a long drive planned the following day. First class service from people that know their stuff and don't mess around. Super happy with everything they have done for me. Thank you!",
-  },
-  {
-    name: "Suzanne",
-    review:
-      "Elite what a treat! I had a problem with swollen wheel nuts and another company couldn't get them off. I was recommended here and Elite were amazing. They replaced all my wheel nuts. They were professional, supportive and very quick service. I will be using them again to get my tyres in the future.",
-  },
-  {
-    name: "Peter",
-    review:
-      "Had new wheels and tyres fitted to my motorhome this week, competitively priced and fantastic service from all the guys.",
-  },
-  {
-    name: "Asam Hussain",
-    review:
-      "Quality service and excellent refurb job on my BMW MV3 Alloys at Walsall branch. Would highly recommend and use them again!",
-  },
-  {
-    name: "MR KEVIN WHITE",
-    review:
-      "Amazing service, very helpful staff. Nothing was too much trouble for the friendly staff. Highly recommended.",
-  },
+    name: "Sample User 5",
+    review: "Sample Review: Excellent customer service. Fair prices, honest advice, and very friendly staff throughout.",
+  }
 ];
 
 const chunkArray = (arr, size) => {

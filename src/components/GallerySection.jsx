@@ -4,11 +4,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { FaArrowsLeftRight } from "react-icons/fa6";
 
 const cardData = [
-  { beforeImageUrl: "/g1.jpg", afterImageUrl: "/g2.jpg", altText: "Classic car restoration set 1" },
- 
-  { beforeImageUrl: "/g5.jpg", afterImageUrl: "/g6.jpg", altText: "Classic car restoration set 3" },
- 
-  { beforeImageUrl: "/g9.jpg", afterImageUrl: "/g10.jpg", altText: "Classic car restoration set 5" },
+  
   { beforeImageUrl: "/g12.jpg", afterImageUrl: "/g11.jpg", altText: "Classic car restoration set 6" },
  
   { beforeImageUrl: "/g15.jpg", afterImageUrl: "/g16.jpg", altText: "Classic car restoration set 8" },
