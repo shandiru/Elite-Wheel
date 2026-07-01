@@ -69,7 +69,7 @@ const ServiceSection = () => {
 
   const renderMedia = (card, extraClasses = "") => (
     <img
-      src={card.media}
+      src={card.homeImage || card.banner?.thumbnailImage || card.media}
       alt={card.title}
       className={`w-full h-full object-cover ${extraClasses}`}
       loading="lazy"

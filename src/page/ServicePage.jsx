@@ -24,22 +24,6 @@ const ServicePage = () => {
   };
   const serviceBanner = { ...(service.banner || defaultBanner) };
 
-  if (slug === "diamond-cutting") {
-    serviceBanner.mediaSlides = [
-      {
-        type: "video",
-        src: "/Diamond-cut-video.mp4",
-      },
-      {
-        type: "image",
-        src: "/Diamond-cut-image.jpeg",
-        alt: "Diamond cut alloy wheel service at Elite Wheels Glasgow",
-      },
-    ];
-    serviceBanner.thumbnailImage = "/Diamond-cut-image.jpeg";
-    serviceBanner.thumbnailAlt = "Diamond cut alloy wheel service at Elite Wheels Glasgow";
-  }
-
   const serviceDetail = service.detail || {
     introBadge: service.page?.introBadge,
     mainTitle: service.page?.introHeading || service.title,

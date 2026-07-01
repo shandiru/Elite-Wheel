@@ -10,13 +10,21 @@ const createService = ({
   description,
   cost,
   image,
+  homeImage,
   tags,
   tag,
   focus,
   page,
   packageData,
+  bannerMediaSlides,
+  bannerThumbnailImage,
+  bannerThumbnailAlt,
 }) => {
   const bannerDescription = description;
+  const resolvedBannerThumbnailImage = bannerThumbnailImage || image;
+  const resolvedBannerThumbnailAlt =
+    bannerThumbnailAlt || `${title} service at Elite Wheels Glasgow`;
+  const resolvedHomeImage = homeImage || resolvedBannerThumbnailImage || image;
   const defaultPackageData = {
     detail: {
       title: "Pricing",
@@ -79,7 +87,8 @@ const createService = ({
     title,
     description,
     cost,
-    media: image,
+    media: resolvedHomeImage,
+    homeImage: resolvedHomeImage,
     image,
     tags,
     tag,
@@ -94,8 +103,9 @@ const createService = ({
       desc2:
         page?.introNote ||
         "Book online or call us and we will confirm the best finish, turnaround, and next steps for your wheels.",
-      thumbnailImage: image,
-      thumbnailAlt: `${title} service at Elite Wheels Glasgow`,
+      thumbnailImage: resolvedBannerThumbnailImage,
+      thumbnailAlt: resolvedBannerThumbnailAlt,
+      mediaSlides: bannerMediaSlides || [],
     },
     detail: page
       ? {

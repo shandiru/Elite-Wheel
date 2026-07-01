@@ -5,8 +5,14 @@ import { FaArrowsLeftRight } from "react-icons/fa6";
 
 const cardData = [
   
-  { beforeImageUrl: "/g12.jpg", afterImageUrl: "/g11.jpg", altText: "Classic car restoration set 6" },
-   { beforeImageUrl: "/Refurb-before.jpeg", afterImageUrl: "/Refurb-after.jpeg", altText: "Classic car restoration set 7" },
+  // { beforeImageUrl: "/g12.jpg", afterImageUrl: "/g11.jpg", altText: "Classic car restoration set 6" },
+   {
+    beforeImageUrl: "/Refurb-before.jpeg",
+    afterImageUrl: "/Refurb-after.jpeg",
+    altText: "Classic car restoration set 7",
+    beforeImageClassName: "object-cover object-[24%_center]",
+    afterImageClassName: "object-cover object-[56%_center]",
+  },
  
   { beforeImageUrl: "/g15.jpg", afterImageUrl: "/g16.jpg", altText: "Classic car restoration set 8" },
   { beforeImageUrl: "/g18.jpg", afterImageUrl: "/g17.jpg", altText: "Classic car restoration set 9" },
@@ -22,6 +28,8 @@ const BeforeAfterSlider = ({
   altText,
   className = "",
   imageClassName = "object-cover",
+  beforeImageClassName = "",
+  afterImageClassName = "",
 }) => {
   const [position, setPosition] = useState(50);
   const containerRef = useRef(null);
@@ -68,7 +76,7 @@ const BeforeAfterSlider = ({
         <img
           src={afterSrc}
           alt={`After - ${altText}`}
-          className={`w-full h-full pointer-events-none ${imageClassName}`}
+          className={`w-full h-full pointer-events-none ${afterImageClassName || imageClassName}`}
           loading="lazy"
         />
       </div>
@@ -83,7 +91,7 @@ const BeforeAfterSlider = ({
         <img
           src={beforeSrc}
           alt={`Before - ${altText}`}
-          className={`w-full h-full pointer-events-none ${imageClassName}`}
+          className={`w-full h-full pointer-events-none ${beforeImageClassName || imageClassName}`}
           loading="lazy"
         />
       </div>
@@ -208,6 +216,8 @@ const WorkGallery = () => {
                       altText={card.altText}
                       className="aspect-[4/3]"
                       imageClassName="object-contain"
+                      beforeImageClassName={card.beforeImageClassName}
+                      afterImageClassName={card.afterImageClassName}
                     />
 
                     <div className="p-4 flex justify-between items-center">
@@ -284,6 +294,8 @@ const WorkGallery = () => {
                   altText={selectedCard.altText}
                   className="h-[75vh] min-h-[320px] w-full"
                   imageClassName="object-contain"
+                  beforeImageClassName={selectedCard.beforeImageClassName}
+                  afterImageClassName={selectedCard.afterImageClassName}
                 />
               </div>
 
