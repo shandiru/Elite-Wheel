@@ -1,20 +1,49 @@
+import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import {
   DEFAULT_DESCRIPTION,
-  DEFAULT_SITE_URL,
+  DEFAULT_OG_IMAGE_PATH,
   SITE_NAME,
+  buildAbsoluteUrl,
+  DEFAULT_TITLE,
 } from "../seo/siteMetadata";
 
-const normalizeSiteUrl = (siteUrl) => siteUrl.replace(/\/+$/, "");
+const RouteSeo = ({
+  path,
+  title = DEFAULT_TITLE,
+  description = DEFAULT_DESCRIPTION,
+  imagePath = DEFAULT_OG_IMAGE_PATH,
+  schema = null,
+}) => {
+  const canonicalUrl = buildAbsoluteUrl(path);
+  const ogImageUrl = buildAbsoluteUrl(imagePath);
 
-const buildCanonicalUrl = (path) => {
-  const siteUrl = normalizeSiteUrl(import.meta.env.VITE_SITE_URL || DEFAULT_SITE_URL);
-  const normalizedPath = path === "/" ? "/" : path.replace(/\/+$/, "");
-  return `${siteUrl}${normalizedPath}`;
-};
+  useEffect(() => {
+    const scriptId = "route-seo-ld-json";
+    const existingScript = document.getElementById(scriptId);
 
-const RouteSeo = ({ path, title, description = DEFAULT_DESCRIPTION }) => {
-  const canonicalUrl = buildCanonicalUrl(path);
+    if (!schema) {
+      if (existingScript) {
+        existingScript.remove();
+      }
+      return undefined;
+    }
+
+    const scriptElement = existingScript || document.createElement("script");
+    scriptElement.id = scriptId;
+    scriptElement.type = "application/ld+json";
+    scriptElement.textContent = JSON.stringify(schema);
+
+    if (!existingScript) {
+      document.head.appendChild(scriptElement);
+    }
+
+    return () => {
+      if (scriptElement.parentNode === document.head) {
+        document.head.removeChild(scriptElement);
+      }
+    };
+  }, [schema]);
 
   return (
     <Helmet>
@@ -26,9 +55,11 @@ const RouteSeo = ({ path, title, description = DEFAULT_DESCRIPTION }) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:image" content={ogImageUrl} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={ogImageUrl} />
     </Helmet>
   );
 };

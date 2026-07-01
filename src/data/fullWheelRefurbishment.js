@@ -4,7 +4,7 @@ export const fullWheelRefurbishmentServiceData = {
   description:
     "Our full refurbishment service takes your wheels from damaged and worn back to a flawless, factory-fresh finish — inside and out. Every aspect of the wheel is addressed, from kerb damage and corrosion to the final colour and finish choice. It's the most comprehensive wheel restoration service we offer, and the results speak for themselves.",
   cost: "Price TBC",
-  image: "/Refurb-after.jpeg",
+  image: "/elite-wheels-wheel-refurbishment-after-glasgow.jpeg",
   tags:
     "wheel refurbishment Glasgow, alloy restoration, full wheel restoration, wheel repair service, refurbished alloys",
   page: {

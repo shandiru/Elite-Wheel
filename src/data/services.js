@@ -23,7 +23,7 @@ const createService = ({
   const bannerDescription = description;
   const resolvedBannerThumbnailImage = bannerThumbnailImage || image;
   const resolvedBannerThumbnailAlt =
-    bannerThumbnailAlt || `${title} service at Elite Wheels Glasgow`;
+    bannerThumbnailAlt || `${title} service at Elite Wheels Glasgow workshop`;
   const resolvedHomeImage = homeImage || resolvedBannerThumbnailImage || image;
   const defaultPackageData = {
     detail: {

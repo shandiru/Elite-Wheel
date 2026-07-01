@@ -87,8 +87,10 @@ export default function Testimonial() {
           <div className="flex flex-col items-center gap-3 mb-8">
             <img
               src="/review.png"
-              alt="review"
+              alt="Google review rating badge for Elite Wheels Glasgow"
               className="h-15 w-auto object-contain mb-3" // Explicit height
+              width="240"
+              height="80"
               loading="lazy"
             />
 

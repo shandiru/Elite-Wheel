@@ -4,6 +4,7 @@ import ServiceBanner from "../common/ServiceBanner";
 import ServiceDetail from "../common/ServiceDetail";
 import { defaultServiceSlug, getServiceBySlug } from "../data/services";
 import RouteSeo from "../components/RouteSeo";
+import { BUSINESS_NAME, LOCATION_NAME, PHONE_DISPLAY } from "../seo/siteMetadata";
 
 const ServicePage = () => {
   const { slug } = useParams();
@@ -50,8 +51,8 @@ const ServicePage = () => {
     <div className="bg-black">
       <RouteSeo
         path={`/services/${service.slug}`}
-        title={`${service.title} Glasgow | Elite Wheels Glasgow`}
-        description={service.page?.introText || service.description}
+        title={`${BUSINESS_NAME} | ${service.title} - ${LOCATION_NAME}`}
+        description={`${service.page?.introText || service.description} Call ${PHONE_DISPLAY} for a free quote.`}
       />
       <ServiceBanner data={serviceBanner} />
       <ServiceDetail data={serviceDetail} />

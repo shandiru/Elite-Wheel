@@ -4,7 +4,7 @@ export const colourChangesServiceData = {
   description:
     "Give your wheels a completely new identity with a professional colour change from Elite Wheels Glasgow. Whether you want a subtle upgrade to a darker shade or a bold statement in a custom colour, our powder coating process delivers a durable, even finish that lasts. Every colour in the spectrum is available - if you can imagine it, we can coat it.",
   cost: "Price TBC",
-  image: "/Colour-change.webp",
+  image: "/elite-wheels-colour-change-glasgow.webp",
   tags:
     "wheel colour change Glasgow, custom alloy colours, rim painting service, bespoke wheel finish, car styling wheels",
   page: {

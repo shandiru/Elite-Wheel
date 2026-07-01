@@ -85,6 +85,8 @@ const ServiceBanner = ({ data }) => {
                     decoding="async"
                     loading={index === 0 ? "eager" : "lazy"}
                     fetchPriority={index === 0 ? "high" : "auto"}
+                    width="1600"
+                    height="900"
                   />
                 )}
               </div>

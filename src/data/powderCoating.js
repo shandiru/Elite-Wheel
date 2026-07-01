@@ -4,7 +4,7 @@ export const powderCoatingServiceData = {
   description:
     "Transform your wheels with a durable, high-quality powder coat finish available in any colour of your choice. Our professional powder coating process delivers a factory-smooth result that outlasts conventional paint by years. Whether you're refreshing worn alloys or going bold with a custom colour, we deliver a flawless finish every time.",
   cost: "£240",
-  image: "/Powder coat.jpeg",
+  image: "/elite-wheels-powder-coating-glasgow.jpeg",
   tags:
     "powder coating, alloy wheel coating, wheel painting Glasgow, custom wheel colours, wheel refurbishment Glasgow",
   page: {

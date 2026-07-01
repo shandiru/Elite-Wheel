@@ -70,9 +70,11 @@ const ServiceSection = () => {
   const renderMedia = (card, extraClasses = "") => (
     <img
       src={card.homeImage || card.banner?.thumbnailImage || card.media}
-      alt={card.title}
+      alt={`${card.title} service at Elite Wheels Glasgow`}
       className={`w-full h-full object-cover ${extraClasses}`}
       loading="lazy"
+      width="1200"
+      height="800"
     />
   );
 

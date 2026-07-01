@@ -1,34 +1,34 @@
-import React from "react";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 const Footer = () => {
   return (
     <footer className="bg-black text-white border-t border-white/10">
-      {/* TOP */}
       <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="flex flex-col md:flex-row justify-between gap-10" >
-
-          {/* BRAND */}
-          <div className="flex flex-col flex-1" >
-            <span className="text-2xl font-bold mb-4">
-              Elite Wheels Glasgow
-            </span>
+        <div className="flex flex-col md:flex-row justify-between gap-10">
+          <div className="flex flex-col flex-1">
+            <span className="text-2xl font-bold mb-4">Elite Wheels Glasgow</span>
 
             <p className="text-[var(--muted)] leading-relaxed mb-6 max-w-sm">
-              At Elite Wheels Glasgow, we combine expert craftsmanship with premium finishes to restore your alloy wheels to their best. Quality workmanship, fast turnaround, and attention to detail are at the heart of everything we do.
+              At Elite Wheels Glasgow, we combine expert craftsmanship with
+              premium finishes to restore your alloy wheels to their best.
+              Quality workmanship, fast turnaround, and attention to detail are
+              at the heart of everything we do.
             </p>
 
-            {/* SOCIALS */}
             <div className="flex gap-5 mt-auto">
-              <a href="https://www.facebook.com/people/Elite-Wheels-Glasgow/61588326973623/" target="_blank" className="hover:text-[var(--gold)] transition text-2xl">
+              <a
+                href="https://www.facebook.com/people/Elite-Wheels-Glasgow/61588326973623/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[var(--gold)] transition text-2xl"
+              >
                 <FaFacebookF />
               </a>
             </div>
           </div>
 
-          {/* PAGES */}
           <div className="flex flex-col flex-1 md:items-center">
             <h3 className="text-lg font-semibold mb-6 text-[var(--gold)]">Pages</h3>
             <ul className="space-y-4 text-[var(--muted)] md:text-center">
@@ -39,7 +39,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* OPENING HOURS - NEW SECTION */}
           <div className="flex flex-col flex-1 md:items-center">
             <h3 className="text-lg font-semibold mb-6 text-[var(--gold)]">Opening Hours</h3>
             <ul className="space-y-2 text-[var(--muted)] md:text-center text-sm">
@@ -53,18 +52,14 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* COMPANY */}
-          <div className="flex flex-col flex-1 md:items-end items-start" >
+          <div className="flex flex-col flex-1 md:items-end items-start">
             <h3 className="text-lg font-semibold mb-6 text-[var(--gold)]">Company</h3>
             <ul className="space-y-4 text-[var(--muted)] md:text-right">
-              {/* Clickable phone */}
               <li>
                 <a href="tel:07909445101" className="hover:text-white transition-colors">
-                   07909 445101
+                  07909 445101
                 </a>
               </li>
-
-              {/* Email button */}
               <li>
                 <a
                   href="mailto:Tune-itscotland@hotmail.com"
@@ -73,8 +68,6 @@ const Footer = () => {
                   Email Us
                 </a>
               </li>
-
-              {/* Clickable address (Google Maps link) */}
               <li>
                 <a
                   href="https://maps.app.goo.gl/QhPQjNmN28A3c5gh8"
@@ -88,20 +81,19 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
         </div>
       </div>
 
-      {/* DIVIDER */}
       <div className="border-t border-white/10" />
 
-      {/* BOTTOM */}
       <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[var(--muted)]">
         <div className="text-center md:text-left">
-          © {new Date().getFullYear()} Elite Wheels Glasgow. All rights reserved.
+          Copyright {new Date().getFullYear()} Elite Wheels Glasgow. All rights reserved.
         </div>
 
-        <div>Powered by <a target="_blank" rel="noopener noreferrer" href="https://www.ansely.co.uk/" className="hover:underline hover:text-[var(--gold)]">Ansely</a></div>
+        <div>
+          Powered by <a target="_blank" rel="noopener noreferrer" href="https://www.ansely.co.uk/" className="hover:underline hover:text-[var(--gold)]">Ansely</a>
+        </div>
 
         <div className="flex gap-6">
           <Link to="/privacy-policy" className="underline hover:text-white transition">Privacy Policy</Link>

@@ -5,7 +5,7 @@ export const diamondCuttingServiceData = {
     "Restore that sought-after factory diamond cut finish with precision lathe machining carried out by our experienced technicians. Diamond cutting removes the outer layer of your alloy to reveal a bright, mirror-like face that catches the light like no other finish. It's the gold standard in wheel refurbishment, and at Elite Wheels Glasgow we deliver it to an exact factory specification.",
   cost: "£300",
   image: "/g14.jpg",
-  bannerThumbnailImage: "/Diamond-cut-image.jpeg",
+  bannerThumbnailImage: "/elite-wheels-diamond-cut-alloy-wheel-glasgow.jpeg",
   bannerThumbnailAlt: "Diamond cut alloy wheel service at Elite Wheels Glasgow",
   bannerMediaSlides: [
     {
@@ -14,7 +14,7 @@ export const diamondCuttingServiceData = {
     },
     {
       type: "image",
-      src: "/Diamond-cut-image.jpeg",
+      src: "/elite-wheels-diamond-cut-alloy-wheel-glasgow.jpeg",
       alt: "Diamond cut alloy wheel service at Elite Wheels Glasgow",
     },
   ],
