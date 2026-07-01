@@ -1,7 +1,7 @@
-import { colourChangesServiceData } from "./colourChanges";
-import { diamondCuttingServiceData } from "./diamondCutting";
-import { fullWheelRefurbishmentServiceData } from "./fullWheelRefurbishment";
-import { powderCoatingServiceData } from "./powderCoating";
+import { colourChangesServiceData } from "./colourChanges.js";
+import { diamondCuttingServiceData } from "./diamondCutting.js";
+import { fullWheelRefurbishmentServiceData } from "./fullWheelRefurbishment.js";
+import { powderCoatingServiceData } from "./powderCoating.js";
 
 const createService = ({
   number,
@@ -93,7 +93,7 @@ const createService = ({
     tags,
     tag,
     focus,
-    link: `/service/${slug}`,
+    link: `/services/${slug}`,
     banner: {
       tag,
       introBadge: page?.introBadge,

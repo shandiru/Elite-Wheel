@@ -1,6 +1,13 @@
+import RouteSeo from "./RouteSeo";
+
 const TermsConditions = () => {
   return (
     <section className="bg-black text-white mx-auto px-4 py-8">
+          <RouteSeo
+              path="/terms-conditions"
+              title="Terms and Conditions | Elite Wheels Glasgow"
+              description="Read the website terms and conditions for Elite Wheels Glasgow, including site usage, liability, and contact details."
+          />
           <div className="max-w-6xl mx-auto">
               <h1 className="text-3xl font-semibold text-center mb-6 pt-15">Website Terms of Use</h1>
               <p className="text-center text-gray-200">Last updated: 22/06/26</p>

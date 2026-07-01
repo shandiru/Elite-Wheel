@@ -1,8 +1,13 @@
-;
+import RouteSeo from "./RouteSeo";
 
 const PrivacyPolicy = () => {
     return (
         <div className="mx-auto px-4 py-12 sm:px-6 lg:px-16 bg-black text-white">
+            <RouteSeo
+                path="/privacy-policy"
+                title="Privacy Policy | Elite Wheels Glasgow"
+                description="Read the Elite Wheels Glasgow privacy policy covering how personal data is collected, used, stored, and protected."
+            />
             <h1 className="text-4xl font-semibold text-center mb-8 pt-10">Privacy Policy</h1>
             <p className="text-center text-white">Last updated: 22/06/26</p>
 

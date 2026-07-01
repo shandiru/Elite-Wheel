@@ -3,13 +3,14 @@ import Package from "../common/Package";
 import ServiceBanner from "../common/ServiceBanner";
 import ServiceDetail from "../common/ServiceDetail";
 import { defaultServiceSlug, getServiceBySlug } from "../data/services";
+import RouteSeo from "../components/RouteSeo";
 
 const ServicePage = () => {
   const { slug } = useParams();
   const service = getServiceBySlug(slug);
 
   if (!service) {
-    return <Navigate to={`/service/${defaultServiceSlug}`} replace />;
+    return <Navigate to={`/services/${defaultServiceSlug}`} replace />;
   }
 
   const defaultBanner = {
@@ -47,6 +48,11 @@ const ServicePage = () => {
 
   return (
     <div className="bg-black">
+      <RouteSeo
+        path={`/services/${service.slug}`}
+        title={`${service.title} Glasgow | Elite Wheels Glasgow`}
+        description={service.page?.introText || service.description}
+      />
       <ServiceBanner data={serviceBanner} />
       <ServiceDetail data={serviceDetail} />
       <Package data={{ ...service.packageData, serviceTitle: service.title }} />

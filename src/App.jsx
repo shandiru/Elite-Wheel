@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Navigate, Route, Routes, useParams } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Navbar from "./components/Navbar";
@@ -12,6 +12,16 @@ import ScrollToTop from "./components/ScrollToTop";
 import GDPRConsent from "./components/GDPRButton";
 import { defaultServiceSlug } from "./data/services";
 import ScrollToHash from "./components/ScrollToHash";
+import { HelmetProvider } from "react-helmet-async";
+
+const LegacyServiceRedirect = () => (
+  <Navigate to={`/services/${defaultServiceSlug}`} replace />
+);
+
+const LegacyServiceSlugRedirect = () => {
+  const { slug } = useParams();
+  return <Navigate to={`/services/${slug}`} replace />;
+};
 
 function App() {
   useEffect(() => {
@@ -24,20 +34,24 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <ScrollToHash />
-      <ScrollToTop />
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/service" element={<Navigate to={`/service/${defaultServiceSlug}`} replace />} />
-        <Route path="/service/:slug" element={<ServicePage />} />
-        <Route path="/terms-conditions" element={<TermsConditions />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-      </Routes>
-      <Footer />
-      <GDPRConsent />
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <ScrollToHash />
+        <ScrollToTop />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Navigate to={`/services/${defaultServiceSlug}`} replace />} />
+          <Route path="/services/:slug" element={<ServicePage />} />
+          <Route path="/service" element={<LegacyServiceRedirect />} />
+          <Route path="/service/:slug" element={<LegacyServiceSlugRedirect />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        </Routes>
+        <Footer />
+        <GDPRConsent />
+      </Router>
+    </HelmetProvider>
   );
 }
 
