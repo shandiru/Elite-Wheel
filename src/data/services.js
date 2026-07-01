@@ -93,7 +93,7 @@ const createService = ({
     tags,
     tag,
     focus,
-    link: `/services/${slug}`,
+    link: `/services/${slug}/`,
     banner: {
       tag,
       introBadge: page?.introBadge,

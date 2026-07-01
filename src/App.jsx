@@ -15,12 +15,12 @@ import ScrollToHash from "./components/ScrollToHash";
 import { HelmetProvider } from "react-helmet-async";
 
 const LegacyServiceRedirect = () => (
-  <Navigate to={`/services/${defaultServiceSlug}`} replace />
+  <Navigate to={`/services/${defaultServiceSlug}/`} replace />
 );
 
 const LegacyServiceSlugRedirect = () => {
   const { slug } = useParams();
-  return <Navigate to={`/services/${slug}`} replace />;
+  return <Navigate to={`/services/${slug}/`} replace />;
 };
 
 function App() {
@@ -41,7 +41,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Navigate to={`/services/${defaultServiceSlug}`} replace />} />
+          <Route path="/services" element={<Navigate to={`/services/${defaultServiceSlug}/`} replace />} />
           <Route path="/services/:slug" element={<ServicePage />} />
           <Route path="/service" element={<LegacyServiceRedirect />} />
           <Route path="/service/:slug" element={<LegacyServiceSlugRedirect />} />

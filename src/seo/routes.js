@@ -7,7 +7,7 @@ export const STATIC_ROUTE_PATHS = [
 ];
 
 export const SERVICE_ROUTE_PATHS = services.map(
-  (service) => `/services/${service.slug}`
+  (service) => `/services/${service.slug}/`
 );
 
 export const CANONICAL_ROUTE_PATHS = [

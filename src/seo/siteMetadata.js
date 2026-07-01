@@ -22,7 +22,10 @@ export const normalizeSiteUrl = (siteUrl) => siteUrl.replace(/\/+$/, "");
 
 export const buildAbsoluteUrl = (path = "/") => {
   const siteUrl = normalizeSiteUrl(import.meta.env.VITE_SITE_URL || DEFAULT_SITE_URL);
-  const normalizedPath = path === "/" ? "/" : path.replace(/\/+$/, "");
+  const normalizedPath =
+    path === "/"
+      ? "/"
+      : `/${path.replace(/^\/+|\/+$/g, "")}${path.endsWith("/") ? "/" : ""}`;
   return `${siteUrl}${normalizedPath}`;
 };
 

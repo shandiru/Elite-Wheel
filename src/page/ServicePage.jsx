@@ -11,7 +11,7 @@ const ServicePage = () => {
   const service = getServiceBySlug(slug);
 
   if (!service) {
-    return <Navigate to={`/services/${defaultServiceSlug}`} replace />;
+    return <Navigate to={`/services/${defaultServiceSlug}/`} replace />;
   }
 
   const defaultBanner = {
@@ -50,7 +50,7 @@ const ServicePage = () => {
   return (
     <div className="bg-black">
       <RouteSeo
-        path={`/services/${service.slug}`}
+        path={`/services/${service.slug}/`}
         title={`${BUSINESS_NAME} | ${service.title} - ${LOCATION_NAME}`}
         description={`${service.page?.introText || service.description} Call ${PHONE_DISPLAY} for a free quote.`}
       />
