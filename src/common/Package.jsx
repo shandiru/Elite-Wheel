@@ -208,6 +208,133 @@ function QuoteModal({ isOpen, onClose, packageName, serviceName, services }) {
 }
 
 // ─── Main Package Component ─────────────────────────────────────────────────
+function InlineQuoteForm({ serviceName, services }) {
+    const createInitialForm = () => ({
+        name: "",
+        phone: "",
+        service: serviceName || "",
+        date: "",
+        time: "",
+        info: "",
+    });
+
+    const [form, setForm] = useState(createInitialForm);
+
+    const handleChange = (e) => {
+        setForm({ ...form, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const message =
+            `Hello! I'd like to get a free quote.\n\n` +
+            `*Full Name:* ${form.name}\n` +
+            `*Phone:* ${form.phone}\n` +
+            `*Service:* ${form.service}\n` +
+            `*Preferred Date:* ${form.date}\n` +
+            `*Preferred Time:* ${form.time}\n` +
+            `*More Info:* ${form.info}`;
+
+        const encoded = encodeURIComponent(message);
+        window.open(`https://wa.me/447909445101?text=${encoded}`, "_blank");
+        setForm(createInitialForm());
+    };
+
+    return (
+        <div className="rounded-2xl border border-white/10 bg-[#151515] p-6 sm:p-8 shadow-sm">
+            <div className="mb-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--gold)]">
+                    Quick Enquiry
+                </p>
+                <h3 className="mt-3 text-2xl sm:text-3xl font-bold text-white">
+                    Get a quote before pricing
+                </h3>
+                <p className="mt-3 text-sm sm:text-base text-gray-300">
+                    Send us your details and preferred slot, and we will take your enquiry straight to WhatsApp.
+                </p>
+            </div>
+
+            <form className="space-y-4" onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <input
+                        type="text"
+                        name="name"
+                        value={form.name}
+                        onChange={handleChange}
+                        placeholder="Full Name"
+                        required
+                        className="w-full rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 outline-none transition-all bg-[#111] border border-white/10 focus:border-[var(--gold)]"
+                    />
+                    <input
+                        type="tel"
+                        name="phone"
+                        value={form.phone}
+                        onChange={handleChange}
+                        placeholder="Phone Number"
+                        required
+                        className="w-full rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 outline-none transition-all bg-[#111] border border-white/10 focus:border-[var(--gold)]"
+                    />
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <select
+                        name="service"
+                        value={form.service}
+                        onChange={handleChange}
+                        required
+                        className="w-full rounded-xl px-4 py-3 text-sm text-white outline-none transition-all appearance-none bg-[#111] border border-white/10 focus:border-[var(--gold)]"
+                        style={{ colorScheme: "dark" }}
+                    >
+                        <option value="">Select Your Service</option>
+                        {services?.map((service, index) => (
+                            <option key={index} value={service}>
+                                {service}
+                            </option>
+                        ))}
+                    </select>
+                    <input
+                        type="date"
+                        name="date"
+                        value={form.date}
+                        onChange={handleChange}
+                        className="w-full rounded-xl px-4 py-3 text-sm text-white outline-none transition-all bg-[#111] border border-white/10 focus:border-[var(--gold)]"
+                        style={{ colorScheme: "dark" }}
+                    />
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <input
+                        type="time"
+                        name="time"
+                        value={form.time}
+                        onChange={handleChange}
+                        className="w-full rounded-xl px-4 py-3 text-sm text-white outline-none transition-all bg-[#111] border border-white/10 focus:border-[var(--gold)]"
+                        style={{ colorScheme: "dark" }}
+                    />
+                    <textarea
+                        name="info"
+                        value={form.info}
+                        onChange={handleChange}
+                        rows={1}
+                        placeholder="More Info"
+                        className="w-full rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 outline-none transition-all resize-none bg-[#111] border border-white/10 focus:border-[var(--gold)]"
+                    />
+                </div>
+
+                <button
+                    type="submit"
+                    className="w-full flex items-center justify-center gap-3 py-4 rounded-full font-bold text-white text-base transition-all hover:opacity-90 active:scale-95"
+                    style={{ backgroundColor: "#25D366" }}
+                >
+                    <SiWhatsapp size={22} />
+                    Submit via WhatsApp
+                </button>
+            </form>
+        </div>
+    );
+}
+
 export default function Package({ data }) {
     const brandBlue = "var(--gold)";
 
@@ -271,6 +398,7 @@ export default function Package({ data }) {
 
                     {/* RIGHT COLUMN */}
                     <div className="flex flex-col gap-10 mt-10 lg:mt-0">
+                        <InlineQuoteForm serviceName={serviceTitle} services={allServices} />
                         {packages?.map((pkg, idx) => {
                             const packageLabel = pkg.type || pkg.name;
 

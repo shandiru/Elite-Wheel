@@ -16,9 +16,10 @@ const cardData = [
  
   { beforeImageUrl: "/elite-wheels-wheel-repair-before-glasgow-01.jpg", afterImageUrl: "/elite-wheels-wheel-repair-after-glasgow-01.jpg", altText: "Alloy wheel repair before and after in Glasgow" },
   { beforeImageUrl: "/elite-wheels-wheel-repair-before-glasgow-02.jpg", afterImageUrl: "/elite-wheels-wheel-repair-after-glasgow-02.jpg", altText: "Diamond cut alloy wheel before and after repair in Glasgow" },
-  { beforeImageUrl: "/elite-wheels-wheel-repair-before-glasgow-03.jpg", afterImageUrl: "/elite-wheels-wheel-repair-after-glasgow-03.jpg", altText: "Alloy wheel refinishing before and after at Elite Wheels Glasgow" },
+  // { beforeImageUrl: "/elite-wheels-wheel-repair-before-glasgow-03.jpg", afterImageUrl: "/elite-wheels-wheel-repair-after-glasgow-03.jpg", altText: "Alloy wheel refinishing before and after at Elite Wheels Glasgow" },
   { beforeImageUrl: "/elite-wheels-wheel-repair-before-glasgow-04.jpeg", afterImageUrl: "/elite-wheels-wheel-repair-after-glasgow-04.jpeg", altText: "Wheel damage repair before and after in Glasgow" },
-  { beforeImageUrl: "/elite-wheels-wheel-repair-before-glasgow-05.jpeg", afterImageUrl: "/elite-wheels-wheel-repair-after-glasgow-05.jpeg", altText: "Premium alloy wheel restoration before and after in Glasgow" },
+  { beforeImageUrl: "/before.jpeg", afterImageUrl: "/after-new.jpeg", altText: "Wheel damage repair before and after in Glasgow" },
+  // { beforeImageUrl: "/elite-wheels-wheel-repair-before-glasgow-05.jpeg", afterImageUrl: "/elite-wheels-wheel-repair-after-glasgow-05.jpeg", altText: "Premium alloy wheel restoration before and after in Glasgow" },
 ];
 
 // ---------------- BEFORE AFTER SLIDER ----------------

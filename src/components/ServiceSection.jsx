@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { services } from "../data/services";
 
 const ServiceSection = () => {
+  const navigate = useNavigate();
   const [activeCard, setActiveCard] = useState(0);
   const [progress, setProgress] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
@@ -54,7 +55,10 @@ const ServiceSection = () => {
     if (originalIndex !== activeCard) {
       setActiveCard(originalIndex);
       setProgress(0);
+      return;
     }
+
+    navigate(cards[originalIndex].link);
   };
 
   const handlePrevious = () => {
@@ -116,7 +120,11 @@ const ServiceSection = () => {
               </svg>
             </button>
 
-            <div className="relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 shadow-xl min-h-[760px]" data-aos="zoom-in">
+            <div
+              className="relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 shadow-xl min-h-[760px] cursor-pointer"
+              data-aos="zoom-in"
+              onClick={() => navigate(cards[activeCard].link)}
+            >
               <div className="absolute top-0 left-0 w-full h-1 bg-white/10 overflow-hidden z-20">
                 <div
                   className="absolute left-0 top-0 h-full bg-[var(--gold)] transition-all duration-100 ease-linear"
@@ -153,6 +161,7 @@ const ServiceSection = () => {
                 <Link
                   to={cards[activeCard].link}
                   className="w-full bg-[var(--cta)] text-white py-3 rounded-lg font-bold text-center hover:brightness-90 transition-colors mt-2"
+                  onClick={(event) => event.stopPropagation()}
                 >
                   LEARN MORE
                 </Link>
@@ -226,7 +235,7 @@ const ServiceSection = () => {
                           </p>
 
                           <p className="text-sm lg:text-base text-white leading-relaxed">
-                            {card.cost}
+                             from  {card.cost}
                           </p>
                         </div>
                       </div>
@@ -252,6 +261,7 @@ const ServiceSection = () => {
                         <Link
                           to={card.link}
                           className="bg-[var(--cta)] text-white px-6 py-2.5 rounded-lg text-xs font-bold hover:brightness-90 transition-colors"
+                          onClick={(event) => event.stopPropagation()}
                         >
                           LEARN MORE
                         </Link>

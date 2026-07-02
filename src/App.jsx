@@ -20,8 +20,15 @@ const LegacyServiceRedirect = () => (
 
 const LegacyServiceSlugRedirect = () => {
   const { slug } = useParams();
+  if (slug === "colour-changes") {
+    return <Navigate to="/services/powder-coating/" replace />;
+  }
   return <Navigate to={`/services/${slug}/`} replace />;
 };
+
+const LegacyColourChangeRedirect = () => (
+  <Navigate to="/services/powder-coating/" replace />
+);
 
 function App() {
   useEffect(() => {
@@ -42,6 +49,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Navigate to={`/services/${defaultServiceSlug}/`} replace />} />
+          <Route path="/services/colour-changes" element={<LegacyColourChangeRedirect />} />
           <Route path="/services/:slug" element={<ServicePage />} />
           <Route path="/service" element={<LegacyServiceRedirect />} />
           <Route path="/service/:slug" element={<LegacyServiceSlugRedirect />} />

@@ -1,7 +1,6 @@
-import { colourChangesServiceData } from "./colourChanges.js";
 import { diamondCuttingServiceData } from "./diamondCutting.js";
 import { fullWheelRefurbishmentServiceData } from "./fullWheelRefurbishment.js";
-import { powderCoatingServiceData } from "./powderCoating.js";
+import { powderCoatingColourChangeServiceData } from "./powderCoatingColourChange.js";
 
 const createService = ({
   number,
@@ -177,7 +176,7 @@ export const services = [
   createService({
     number: "01",
     slug: "powder-coating",
-    ...powderCoatingServiceData,
+    ...powderCoatingColourChangeServiceData,
   }),
   createService({
     number: "02",
@@ -188,11 +187,6 @@ export const services = [
     number: "03",
     slug: "wheel-refurbishment",
     ...fullWheelRefurbishmentServiceData,
-  }),
-  createService({
-    number: "04",
-    slug: "colour-changes",
-    ...colourChangesServiceData,
   }),
 ];
 
